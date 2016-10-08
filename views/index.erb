@@ -1,0 +1,28 @@
+<form action="link" method="post" class="form-inline" name="message_form" onsubmit="return validateForm()">
+  <div class="form-group">
+    <label for="message" style="font-weight: bold">Enter your message:</label>
+    <input type="text" name="message" id="message" class="form-control"><br/><br/>
+  </div>
+
+  <div class="form-group">
+    <label for="destroy_option" style="font-weight: bold">Destroy after:</label>
+    <select name="destroy_option" id="destroy_option">
+      <option value="1_visit" selected="selected">1 visit</option>
+      <option value="10_visit">10 visit</option>
+      <option value="1_hour">1 hour</option>
+      <option value="1_day">1 day</option>
+    </select>
+    <br/><br/>
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+<script>
+  function validateForm() {
+    var x = document.forms["message_form"]["message"].value;
+    if (x == null || x == "") {
+      alert("You should add message");
+      return false;
+    }
+  }
+</script>
